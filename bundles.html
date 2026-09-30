@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Colour theme, resolved before first paint so dark mode never flashes light.
+     Must stay inline and in <head>: app.js loads at the end of <body> and would
+     be far too late. A stored choice wins over the OS preference, so turning
+     dark mode off is not silently undone on the next visit. -->
+<script>(function(){var d=document.documentElement,t="light";try{var s=localStorage.getItem("phykar.theme.v1");if(s==="dark"||s==="light"){t=s}else if(window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches){t="dark"}}catch(e){}d.setAttribute("data-theme",t)})();</script>
+<title>Gift Boxes — ₦10,000, ₦25,000 &amp; ₦50,000 | Shop with Phykar</title>
+<meta name="description" content="Curated gift boxes: The Starter Package (₦10,000), The Signature Package (₦25,000) and The Deluxe Package (₦50,000). Build your own box and send it on WhatsApp.">
+<meta name="theme-color" content="#3b1f38">
+<link rel="canonical" href="bundles.html">
+<meta property="og:title" content="Gift Boxes — ₦10,000, ₦25,000 &amp; ₦50,000 | Shop with Phykar">
+<meta property="og:description" content="Three curated gift box tiers plus a build-your-own box. Order in one tap on WhatsApp.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/logo.png" type="image/png" sizes="any">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body data-page="bundles.html">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header id="site-header"></header>
+
+<main id="main">
+
+  <!-- ================================================== TIERS ============ -->
+  <section class="tight" id="tiers">
+    <div class="wrap">
+
+      <div class="grid tier-grid" id="tier-grid"></div>
+
+      <!-- build-your-own-box sits directly under the tiers -->
+      <div class="under-cta">
+        <div>
+          <h3 style="margin-bottom:.25rem">Rather build your own?</h3>
+          <p>Curate your ideal package item-by-item. Every selection is verified directly with you before we wrap and ship.</p>
+        </div>
+        <a class="btn btn-dark btn-lg" href="#builder">Build my own box</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================================================== WHAT'S INSIDE ==== -->
+  <section class="bg-blush" id="how">
+    <div class="wrap">
+      <div class="section-head center">
+        <span class="eyebrow">How it works</span>
+        <h2>Ordering a box takes 60 seconds</h2>
+        <p>No forms, no card details on this website — just a WhatsApp message.</p>
+      </div>
+      <div class="grid grid-3">
+        <article class="card">
+          <p class="step-num" aria-hidden="true">01</p>
+          <h3>Pick a tier or build your own</h3>
+          <p>Choose ₦10k, ₦25k or ₦50k — or use the builder below to pick exact items and set your own total.</p>
+        </article>
+        <article class="card">
+          <p class="step-num" aria-hidden="true">02</p>
+          <h3>We confirm every item</h3>
+          <p>You'll get a message listing the contents, the final price and the delivery fee before anything is charged.</p>
+        </article>
+        <article class="card">
+          <p class="step-num" aria-hidden="true">03</p>
+          <h3>Wrapped, tagged &amp; delivered</h3>
+          <p>We add the wrapping, your gift note and the ribbon, then hand it over to the rider. Same-day in Lagos.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================== BUILDER ========== -->
+  <section id="builder">
+    <div class="wrap">
+      <div class="section-head center">
+        <span class="eyebrow">Build your own</span>
+        <h2>Build your own box</h2>
+        <p>Pick exactly what goes inside. We'll tell you the running total, suggest upgrades, and send the whole thing to WhatsApp in one message.</p>
+      </div>
+
+      <div class="builder">
+        <div class="builder-picker" id="builder-picker"></div>
+
+        <aside class="builder-summary" id="builder-summary" aria-label="Your box summary">
+          <h3 style="margin-bottom:.4rem">Your box</h3>
+          <ul class="summary-list" id="box-list"></ul>
+
+          <div class="summary-row">
+            <span>Estimated total</span>
+            <span class="tier-price" id="box-total">₦0</span>
+          </div>
+          <p class="summary-hint" id="box-hint"></p>
+
+          <form id="box-form" autocomplete="off">
+            <div class="field field-row">
+              <div class="field">
+                <label for="f-name">Your name</label>
+                <input id="f-name" name="name" type="text" placeholder="Chioma">
+              </div>
+              <div class="field">
+                <label for="f-for">Box is for</label>
+                <select id="f-for" name="forWhom">
+                  <option value="">Choose…</option>
+                  <option>Female</option>
+                  <option>Male</option>
+                  <option>Unisex / mixed</option>
+                  <option>A group of people</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field field-row">
+              <div class="field">
+                <label for="f-budget">My budget</label>
+                <select id="f-budget" name="budget">
+                  <option value="">Choose…</option>
+                  <option>₦10,000</option>
+                  <option>₦25,000</option>
+                  <option>₦50,000</option>
+                  <option>Custom</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="f-occasion">Occasion</label>
+                <input id="f-occasion" name="occasion" type="text" placeholder="Birthday, wedding…">
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="f-notes">Anything else?</label>
+              <textarea id="f-notes" name="notes" rows="2" placeholder="Shades I like, allergies, delivery address…"></textarea>
+            </div>
+
+            <button class="btn btn-wa btn-block" type="submit" id="box-send">Send my box on WhatsApp</button>
+            <div style="display:flex;justify-content:center;margin-top:.75rem">
+              <button class="link-btn" type="button" id="box-clear">Clear selection</button>
+            </div>
+          </form>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================== FAQ ============= -->
+  <section class="bg-blush" id="faq">
+    <div class="wrap">
+      <div class="section-head center">
+        <span class="eyebrow">Good to know</span>
+        <h2>Delivery, payment &amp; FAQ</h2>
+      </div>
+      <div id="faq-list"></div>
+
+      <div class="cta" style="margin-top:2.5rem">
+        <h2>Still deciding?</h2>
+        <p>Send us a message with your budget and who the box is for. We'll suggest exactly what to put inside — no pressure, no commitment.</p>
+        <div class="cta-actions">
+          <a class="btn btn-wa btn-lg" data-wa="Hi Phykar! I'd like help choosing a gift box. My budget is ₦___ and the box is for ___." href="#">Chat with a liaison</a>
+          <a class="btn btn-onDark btn-lg" href="beauty.html">Browse individual items</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="site-footer"></footer>
+<a id="wa-float" href="#"></a>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+<script>
+  (function () {
+    var ready = setInterval(function () {
+      if (!window.Phykar) return;
+      clearInterval(ready);
+      document.querySelectorAll("[data-wa]").forEach(function (a) {
+        a.href = window.Phykar.waLink(a.getAttribute("data-wa"));
+        a.target = "_blank";
+        a.rel = "noopener";
+      });
+    }, 30);
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://phykar-store.netlify.app/sitemap.xml

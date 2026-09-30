@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Colour theme, resolved before first paint so dark mode never flashes light.
+     Must stay inline and in <head>: app.js loads at the end of <body> and would
+     be far too late. A stored choice wins over the OS preference, so turning
+     dark mode off is not silently undone on the next visit. -->
+<script>(function(){var d=document.documentElement,t="light";try{var s=localStorage.getItem("phykar.theme.v1");if(s==="dark"||s==="light"){t=s}else if(window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches){t="dark"}}catch(e){}d.setAttribute("data-theme",t)})();</script>
+<title>Page not found | Shop with Phykar</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#3b1f38">
+<link rel="icon" href="/assets/img/logo.png" type="image/png" sizes="any">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body data-page="">
+<header id="site-header"></header>
+
+<main>
+  <section class="hero" style="text-align:center">
+    <div class="wrap">
+      <span class="eyebrow">404</span>
+      <h1>This page has sold out</h1>
+      <p class="hero-lede" style="margin-inline:auto">
+        We couldn't find that page. Try one of the links below, or just ask us directly on WhatsApp.
+      </p>
+      <div class="hero-actions" style="justify-content:center">
+        <a class="btn btn-dark btn-lg" href="/index.html">Back to home</a>
+        <a class="btn btn-wa btn-lg" href="https://wa.me/2348101447062?text=Hi%20Phykar!%20I%20couldn't%20find%20what%20I%20was%20looking%20for%20on%20your%20site." target="_blank" rel="noopener">Ask on WhatsApp</a>
+      </div>
+      <div class="hero-actions" style="justify-content:center;margin-top:1rem">
+        <a class="btn btn-ghost" href="/beauty.html">Beauty</a>
+        <a class="btn btn-ghost" href="/jewelry.html">Jewelry</a>
+        <a class="btn btn-ghost" href="/hair.html">Hair</a>
+        <a class="btn btn-ghost" href="/lifestyle.html">Lifestyle</a>
+        <a class="btn btn-ghost" href="/bundles.html">Gift Boxes</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="site-footer"></footer>
+<a id="wa-float" href="#"></a>
+
+<script src="/assets/js/data.js"></script>
+<script src="/assets/js/app.js"></script>
+</body>
+</html>

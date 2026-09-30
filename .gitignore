@@ -1,0 +1,13 @@
+# JetBrains / IntelliJ local project state
+.idea/
+
+# VS Code
+.vscode/
+
+# OS noise
+.DS_Store
+Thumbs.db
+
+# No build step here, but keep these out if tooling is ever added
+node_modules/
+npm-debug.log*

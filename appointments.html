@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Colour theme, resolved before first paint so dark mode never flashes light.
+     Must stay inline and in <head>: app.js loads at the end of <body> and would
+     be far too late. A stored choice wins over the OS preference, so turning
+     dark mode off is not silently undone on the next visit. -->
+<script>(function(){var d=document.documentElement,t="light";try{var s=localStorage.getItem("phykar.theme.v1");if(s==="dark"||s==="light"){t=s}else if(window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches){t="dark"}}catch(e){}d.setAttribute("data-theme",t)})();</script>
+<title>Book an Appointment | Shop with Phykar</title>
+<meta name="description" content="Book lash extensions, lash refills, lash removal or brow lamination &amp; tint. Choose your date and time and send the booking straight to WhatsApp.">
+<meta name="theme-color" content="#3b1f38">
+<link rel="canonical" href="appointments.html">
+<meta property="og:title" content="Book an Appointment | Shop with Phykar">
+<meta property="og:description" content="Lash and beauty services. Pick a date and time, then send your booking on WhatsApp.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/logo.png" type="image/png" sizes="any">
+<link rel="apple-touch-icon" href="assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body data-page="appointments.html">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header id="site-header"></header>
+
+<main id="main">
+
+  <section class="hero" style="padding-block:clamp(2.25rem,5vw,3.75rem) clamp(1.75rem,3.5vw,2.75rem)">
+    <div class="wrap">
+      <span class="eyebrow"><a href="index.html" style="color:inherit">Home</a> &rsaquo; Book</span>
+      <h1 style="font-size:clamp(2rem,5vw,3.3rem)">Book your <span class="accent">appointment</span></h1>
+      <p class="hero-lede">
+        Choose a service, pick your date and time, then tap one button — we write the whole
+        booking out for you on WhatsApp so you just hit send.
+      </p>
+    </div>
+  </section>
+
+  <section class="tight" id="appt">
+    <div class="wrap">
+      <div class="appt">
+
+        <!-- ------------------------------------------------- steps --- -->
+        <div>
+          <div class="appt-panel">
+            <div class="appt-step"><b>1</b><h3>Choose your service</h3></div>
+            <div class="appt-services" id="appt-services"></div>
+          </div>
+
+          <div class="appt-panel">
+            <div class="appt-step"><b>2</b><h3>Pick a date</h3></div>
+            <div class="appt-dates" id="appt-dates"></div>
+          </div>
+
+          <div class="appt-panel">
+            <div class="appt-step"><b>3</b><h3>Pick a time</h3></div>
+            <div class="slots" id="appt-slots"></div>
+            <p class="appt-note" id="appt-slot-note" style="margin-top:.9rem"></p>
+          </div>
+        </div>
+
+        <!-- ------------------------------------------------ summary --- -->
+        <aside class="appt-summary" aria-label="Your booking">
+          <div class="appt-step"><b>4</b><h3>Your details</h3></div>
+
+          <form id="appt-form" autocomplete="off">
+            <div class="field">
+              <label for="a-name">Your name</label>
+              <input id="a-name" name="name" type="text" placeholder="Chioma">
+            </div>
+            <div class="field">
+              <label for="a-phone">Phone number</label>
+              <input id="a-phone" name="phone" type="tel" placeholder="080 000 0000">
+            </div>
+            <div class="field">
+              <label for="a-notes">Anything we should know?</label>
+              <textarea id="a-notes" name="notes" rows="3" placeholder="First time getting lashes, sensitive eyes, preferred style…"></textarea>
+            </div>
+          </form>
+
+          <div class="appt-step"><b>5</b><h3>Review &amp; send</h3></div>
+          <dl>
+            <dt>Service</dt>
+            <dd id="sum-service"><span class="none">Not chosen yet</span></dd>
+            <dt>Date</dt>
+            <dd id="sum-date"><span class="none">Not chosen yet</span></dd>
+            <dt>Time</dt>
+            <dd id="sum-time"><span class="none">Not chosen yet</span></dd>
+            <dt>Duration</dt>
+            <dd id="sum-length"><span class="none">Not chosen yet</span></dd>
+          </dl>
+
+          <p class="appt-note">We confirm every booking on WhatsApp before it is locked in. No payment is taken on this website.</p>
+          <button class="btn btn-wa btn-block" type="button" id="appt-send" aria-disabled="true">Choose a service, date and time</button>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="cta">
+        <h2>Rather just chat first?</h2>
+        <p>Send a message and we will suggest the right service and the slots that are free that week.</p>
+        <div class="cta-actions">
+          <a class="btn btn-wa btn-lg" data-wa="Hi Phykar! I'd like to ask about your lash and beauty services." href="#">Ask about services</a>
+          <a class="btn btn-onDark btn-lg" href="bundles.html">Browse gift boxes</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="site-footer"></footer>
+<a id="wa-float" href="#"></a>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+<script>
+  (function () {
+    var ready = setInterval(function () {
+      if (!window.Phykar) return;
+      clearInterval(ready);
+      document.querySelectorAll("[data-wa]").forEach(function (a) {
+        a.href = window.Phykar.waLink(a.getAttribute("data-wa"));
+        a.target = "_blank";
+        a.rel = "noopener";
+      });
+    }, 30);
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Colour theme, resolved before first paint so dark mode never flashes light.
+     Must stay inline and in <head>: app.js loads at the end of <body> and would
+     be far too late. A stored choice wins over the OS preference, so turning
+     dark mode off is not silently undone on the next visit. -->
+<script>(function(){var d=document.documentElement,t="light";try{var s=localStorage.getItem("phykar.theme.v1");if(s==="dark"||s==="light"){t=s}else if(window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches){t="dark"}}catch(e){}d.setAttribute("data-theme",t)})();</script>
+<title>Shop with Phykar | Beauty, Accessories &amp; Gift Boxes in Lagos</title>
+<meta name="description" content="Cosmetics, skincare, jewelry, hair accessories, lash and beauty services and gift boxes from ₦10,000. Book an appointment or order in one tap on WhatsApp.">
+<meta name="theme-color" content="#3b1f38">
+<link rel="canonical" href="index.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Shop with Phykar | Curated Beauty, Accessories &amp; Gift Boxes">
+<meta property="og:description" content="Cosmetics, jewelry, hair accessories and beauty services. Order in one tap on WhatsApp. Gift boxes from ₦10,000.">
+<meta property="og:site_name" content="Shop with Phykar">
+<meta property="og:locale" content="en_NG">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/img/logo.png" type="image/png" sizes="any">
+<link rel="apple-touch-icon" href="assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Store",
+  "name": "Shop with Phykar",
+  "description": "Curated cosmetics, skincare, jewelry, hair accessories, beauty services and gift boxes. Direct WhatsApp ordering.",
+  "areaServed": "Nigeria",
+  "currenciesAccepted": "NGN",
+  "telephone": "+2348101447062",
+  "sameAs": ["https://www.tiktok.com/@shopwithphykarlagos"],
+  "potentialAction": {
+    "@type": "ContactPoint",
+    "telephone": "+2348101447062",
+    "contactType": "customer service",
+    "availableLanguage": ["en"]
+  }
+}
+</script>
+</head>
+
+<body data-page="index.html">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header id="site-header"></header>
+
+<main id="main">
+
+  <!-- ================================================== HERO =========== -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Welcome</span>
+        <h1>Curated beauty &amp; accessories, <span class="accent">one tap away</span></h1>
+        <p class="hero-lede">
+          Cosmetics, skincare, jewelry, hair accessories and lash services — hand-picked,
+          fairly priced and confirmed personally. Tap any item to order it straight on WhatsApp.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-wa btn-lg" data-wa="Hi Phykar! I'd like to place an order 🙏" href="#">Order on WhatsApp</a>
+          <a class="btn btn-ghost btn-lg" href="appointments.html">Book an appointment</a>
+        </div>
+
+        <div class="hero-meta">
+          <span>📍 Based in Lagos, Nigeria</span>
+          <span>🚚 Same-day delivery in Lagos</span>
+          <span>💬 Replies in minutes</span>
+        </div>
+      </div>
+
+      <div class="hero-portrait" id="brand-face" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <!-- ================================================== CATEGORIES ====== -->
+  <section id="categories">
+    <div class="wrap">
+      <div class="section-head center">
+        <span class="eyebrow">Shop by category</span>
+        <h2>What are you looking for?</h2>
+      </div>
+      <div class="grid cat-grid" id="category-cards"></div>
+    </div>
+  </section>
+
+  <!-- ================================================== SERVICES ======== -->
+  <section id="services" class="bg-blush">
+    <div class="wrap">
+      <div class="section-head center">
+        <span class="eyebrow">Services</span>
+        <h2>Lash &amp; brow appointments</h2>
+        <p>Pick a service, choose your date and time, and your booking request is written out for you on WhatsApp.</p>
+      </div>
+      <div class="svc-strip" id="service-strip"></div>
+      <div style="margin-top:2rem;text-align:center">
+        <a class="btn btn-dark btn-lg" href="appointments.html">Book an appointment</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================== CTA BANNER ====== -->
+  <section class="tight">
+    <div class="wrap">
+      <div class="cta">
+        <h2>Prefer to see everything at once?</h2>
+        <p>
+          Open our full WhatsApp catalogue — every item, every price, updated as stock comes in.
+          It's the fastest way to shop with us.
+        </p>
+        <div class="cta-actions">
+          <a class="btn btn-wa btn-lg" href="https://wa.me/c/2348101447062" target="_blank" rel="noopener">Open WhatsApp catalogue</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="site-footer"></footer>
+<a id="wa-float" href="#"></a>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+<script>
+  /* wire the hero buttons through the shared WhatsApp link builder */
+  (function () {
+    var ready = setInterval(function () {
+      if (!window.Phykar) return;
+      clearInterval(ready);
+      document.querySelectorAll("[data-wa]").forEach(function (a) {
+        a.href = window.Phykar.waLink(a.getAttribute("data-wa"));
+        a.target = "_blank";
+        a.rel = "noopener";
+      });
+    }, 30);
+  })();
+</script>
+</body>
+</html>

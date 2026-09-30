@@ -1,0 +1,21 @@
+[build]
+  publish = "."
+  command = ""
+
+# Pretty URLs are not used — every page is a real .html file so the site
+# works identically on Netlify, Render, Surge.sh, GitHub Pages or a plain
+# shared host. This block only adds caching and security headers.
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
