@@ -482,7 +482,7 @@
         '<div class="portrait-frame">' +
           '<img src="' + esc(S.face) + '" alt="' + esc(S.brand) + '" width="961" height="1280">' +
           '<span class="portrait-ring" aria-hidden="true"></span>' +
-          '<span class="portrait-tag">Lagos &middot; lash &amp; beauty studio</span>' +
+          '<span class="portrait-tag">Face of the brand</span>' +
         "</div>";
     }
 
