@@ -2,7 +2,7 @@
 
 Static multi-page storefront for **Shop with Phykar** — cosmetics, jewelry, hair accessories,
 lifestyle items and gift boxes. Every order button opens WhatsApp with a pre-filled
-message to **+234 810 *** ******. No build step, no dependencies, no backend.
+message to ""+234 810 *** ****"". No build step, no dependencies, no backend.
 
 ## Pages
 
