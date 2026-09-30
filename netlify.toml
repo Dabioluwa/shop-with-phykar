@@ -6,10 +6,24 @@
 # works identically on Netlify, Render, Surge.sh, GitHub Pages or a plain
 # shared host. This block only adds caching and security headers.
 
+# Images are content-stable and keep the long immutable cache. Code and CSS are
+# not: their filenames never change, so a year-long immutable cache would keep
+# serving stale JavaScript to anyone who visited before an edit. They have to
+# revalidate on every load or copy changes never reach the browser.
 [[headers]]
-  for = "/assets/*"
+  for = "/assets/img/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/assets/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/assets/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
 
 [[headers]]
   for = "/*.html"
